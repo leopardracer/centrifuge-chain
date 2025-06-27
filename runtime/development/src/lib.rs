@@ -308,7 +308,7 @@ impl cumulus_pallet_parachain_system::Config for Runtime {
 	// to be able to recover quickly from a relay chains issue
 	type CheckAssociatedRelayNumber = cumulus_pallet_parachain_system::AnyRelayNumber;
 	type DmpQueue = frame_support::traits::EnqueueWithOrigin<MessageQueue, RelayOrigin>;
-	// Using weights for recomended hardware
+	// Using weights for recommended hardware
 	type OnSystemEvent = ();
 	type OutboundXcmpMessageSource = XcmpQueue;
 	type ReservedDmpWeight = ReservedDmpWeight;
@@ -328,7 +328,7 @@ parameter_types! {
 impl pallet_message_queue::Config for Runtime {
 	type HeapSize = sp_core::ConstU32<{ 64 * 1024 }>;
 	type MaxStale = sp_core::ConstU32<8>;
-	// Using weights for recomended hardware
+	// Using weights for recommended hardware
 	#[cfg(feature = "runtime-benchmarks")]
 	type MessageProcessor =
 		pallet_message_queue::mock_helpers::NoopMessageProcessor<AggregateMessageOrigin>;
